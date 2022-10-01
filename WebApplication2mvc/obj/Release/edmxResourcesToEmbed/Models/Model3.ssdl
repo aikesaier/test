@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalesERPDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="材料表">
+    <Key>
+      <PropertyRef Name="材料id" />
+    </Key>
+    <Property Name="材料id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="材料名称" Type="nvarchar(max)" />
+    <Property Name="材料单价" Type="nvarchar(max)" />
+    <Property Name="日期" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="订单表">
+    <Key>
+      <PropertyRef Name="订单id" />
+    </Key>
+    <Property Name="订单id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="材料名称" Type="nvarchar" MaxLength="50" />
+    <Property Name="数量" Type="int" />
+    <Property Name="账号" Type="nvarchar" MaxLength="50" />
+    <Property Name="qq" Type="nvarchar" MaxLength="50" />
+    <Property Name="备注" Type="nvarchar" MaxLength="50" />
+    <Property Name="日期" Type="datetime" />
+    <Property Name="订单状态" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="员工模型对应的表">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="5" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“SalesERPDB.dbo.订单表视图”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="订单表视图">
+    <Key>
+      <PropertyRef Name="订单id" />
+    </Key>
+    <Property Name="订单id" Type="int" Nullable="false" />
+    <Property Name="材料名称" Type="nvarchar" MaxLength="50" />
+    <Property Name="数量" Type="int" />
+    <Property Name="账号" Type="nvarchar" MaxLength="50" />
+    <Property Name="qq" Type="nvarchar" MaxLength="50" />
+    <Property Name="备注" Type="nvarchar" MaxLength="50" />
+    <Property Name="日期" Type="datetime" />
+    <Property Name="订单状态" Type="nvarchar" MaxLength="50" />
+    <Property Name="材料单价" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="SalesERPDBModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="材料表" EntityType="Self.材料表" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="订单表" EntityType="Self.订单表" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="员工模型对应的表" EntityType="Self.员工模型对应的表" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="订单表视图" EntityType="Self.订单表视图" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [订单表视图].[订单id] AS [订单id], 
+    [订单表视图].[材料名称] AS [材料名称], 
+    [订单表视图].[数量] AS [数量], 
+    [订单表视图].[账号] AS [账号], 
+    [订单表视图].[qq] AS [qq], 
+    [订单表视图].[备注] AS [备注], 
+    [订单表视图].[日期] AS [日期], 
+    [订单表视图].[订单状态] AS [订单状态], 
+    [订单表视图].[材料单价] AS [材料单价]
+    FROM [dbo].[订单表视图] AS [订单表视图]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

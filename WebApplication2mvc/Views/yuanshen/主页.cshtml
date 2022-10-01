@@ -1,0 +1,687 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>玩锤子ys</title>
+
+    <!-- Bootstrap
+    <link rel="stylesheet" href="./css/bootstrap.min.css"  >
+
+
+        <script src="https://cdn.jsdelivr.cn/npm/jquery@1.12.4/dist/jquery.min.js" ></script>
+
+        <script src="./js/bootstrap.min.js"  ></script>   -->
+    <!-- Bootstrap
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    -->
+
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+    
+
+      
+
+        a {
+            color: #000000;
+            text-decorati
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * 
+       * on: none;
+        }
+
+            a:hover {
+                color: #000000;
+                text-decoration: none;
+            }
+
+   
+
+        img {
+            width: 80px;
+            height:80px;
+            padding: 10px;
+            background-size: cover;
+            border-radius: 25px;
+        }
+
+  
+
+ 
+
+        .foot{
+            
+            
+           
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0px;
+            
+        }
+    </style>
+</head>
+<body   style=" background-color: #f7f8fa; text-align:center">
+
+    
+
+
+    @{/***
+
+         <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">提示1</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">提示2</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">提示3</a></li>
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">提示4</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    tips：
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="messages">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="settings">
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+        <!--
+
+        <div class="quyu" style="display: flex;width: 100%;justify-content: space-evenly;background-color: #fff;">
+
+            <a href="">
+                <div class="quyu1" style=" margin-bottom: 10px; text-align: center;">
+                    <div style="font-weight: 100;      margin: 10px; ">0</div>
+                    <div style="font-weight: 100; color: #666; font-size: 12px;">总订单</div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="quyu1" style=" margin-bottom: 10px; text-align: center;">
+                    <div style="font-weight: 100;      margin: 10px; ">0</div>
+                    <div style="font-weight: 100; color: #666; font-size: 12px;"> 排期  </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="quyu1" style=" margin-bottom: 10px; text-align: center;">
+                    <div style="font-weight: 100;         margin: 10px;   ">0</div>
+                    <div style="font-weight: 100; color: #666; font-size: 12px;">进度</div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="quyu1" style=" margin-bottom: 10px; text-align: center;">
+                    <div style="font-weight: 100;      margin: 10px; ">0</div>
+                    <div style="font-weight: 100; color: #666; font-size: 12px;">已完成 </div>
+                </div>
+            </a>
+
+        </div>
+
+            -->  **/ }
+
+
+
+
+    <div class="container"><div class="title" style="padding: 5px;font-size: 16px; text-align:left"><p>下单区</p></div></div>
+
+    <div class="container" style="text-align:center;  ">
+
+
+
+
+
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+                <a href="/yuanshen/cailiao">
+                    <img src="../../Content/树莓.jpg" alt="的法规规定">
+                    <div class="text1" style="display:block; white-space: nowrap;"> 材料</div>
+                </a>
+
+            </div>
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+                <a href="/yuanshen/每日任务">
+                    <img src="../../Content/任务1.jpg" alt="的法规规定">
+                    <div class="text1" style="display:block; white-space: nowrap;"> 每日任务</div>
+                </a>
+
+            </div>
+
+
+
+
+
+
+
+
+            <a href="/yuanshen/每日任务下单页面数量?mingcheng=每月深渊">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white;">
+                    <img src="../../Content/深渊法师.jpg" alt="的法规规定">
+                    <div class="text1" style="display:block; white-space: nowrap;"> 深渊</div>
+
+                </div>
+            </a>
+
+            <a href="/yuanshen/每日任务下单页面数量?mingcheng=看号">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white;">
+                    <img src="../../Content/角色.jpg" alt="的法规规定">
+                    <div class="text1" style="display:block; white-space: nowrap;"> 看号</div>
+
+                </div>
+            </a>
+
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+                <a href="/gonghao/原琴">
+                    <img src="../../Content/壶.jpg" alt="的法规规定">
+                    <div class="text1" style="display:block; "> 原壶</div>
+                </a>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+                <a href="/yuanshen/黑名单">
+                    <img src="../../Content/买家登陆.jpg" alt="的法规规定">
+                    <div class="text1" style="display:block; white-space: nowrap;"> 黑名单</div>
+                </a>
+            </div>
+
+
+            <!--
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+                <a href="/yuanshen/打手注册">
+                    <img src="../../Content/订单查询.jpg" alt="的法规规定">
+                    <div class="text1" style="display:block; white-space: nowrap;"> 打手注册</div>
+                </a>
+            </div>
+
+
+    -->
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="container"><div class="title" style="padding: 5px; font-size: 16px;text-align:left"><span>发布需求区</span></div></div>
+
+    <div class="container" style="text-align:center;  ">
+
+
+
+        <div class="row">
+
+
+            <a href="/yuanshen/旅行者大厅">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;"> 发布需求</div>
+
+                </div>
+            </a>
+
+
+            <a href="/yuanshen/打手大厅">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;">主播大厅</div>
+
+                </div>
+            </a>
+
+
+
+
+
+
+
+
+            <!--
+
+                    <a href="/yuanshen/打手查询1">
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                <span class="glyphicon glyphicon-phone" aria-hidden="true" style="font-size: 30px;width: 80px;
+    padding: 10px;
+    background-size: cover;
+    border-radius: 25px;"></span>
+                <div class="text1" style="display:block; white-space: nowrap;"> 急单区</div>
+
+            </div>
+        </a>
+
+
+
+
+
+                     <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+            <span class="glyphicon glyphicon glyphicon-book" aria-hidden="true" style="font-size: 30px;width: 80px;
+    padding: 10px;
+    background-size: cover;
+    border-radius: 25px;"></span>
+
+            <div class="text1" style="display:block; white-space: nowrap;"> 一键托管</div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <a href="yuanshen/查询订单1">
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                <span class="glyphicon glyphicon-bell" aria-hidden="true" style="font-size: 30px;width: 80px;
+    padding: 10px;
+    background-size: cover;
+    border-radius: 25px;"></span>
+                <div class="text1" style="display:block; white-space: nowrap;">断除烦恼炮</div>
+
+            </div>
+        </a>
+
+
+        <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white;">
+            <span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true" style="font-size: 30px;width: 80px;
+    padding: 10px;
+    background-size: cover;
+    border-radius: 25px;"></span>
+            <div class="text1" style="display:block; white-space: nowrap;"> 售后服务弹</div>
+
+        </div>
+
+               -->
+            <a href="/gonghao/萌新59级">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white;">
+                    <span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;"> 59级萌新</div>
+
+                </div>
+                </a>
+
+
+ 
+
+
+                <a href="/yuanshen/西风骑士团">
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                        <span class="glyphicon glyphicon-wrench" aria-hidden="true" style="font-size: 30px;width: 80px;
+    padding: 10px;
+    background-size: cover;
+    border-radius: 25px;"></span>
+                        <div class="text1" style="display:block; white-space: nowrap;padding-left:10px"> 西风骑士团</div>
+
+                    </div>
+                </a>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    
+                    <a href="https://www.bilibili.com/video/BV1rY411j7Lu/?spm_id_from=333.788">
+                    </a>
+
+
+
+
+
+
+    <div class="container"><div class="title" style="padding: 5px;font-size: 16px;text-align:left"><span>无聊整活区</span></div></div>
+
+    <div class="container" style="text-align:center;  ">
+
+
+
+        <div class="row">
+
+            <a href="/yuanshen/每日价格">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                    <span class="glyphicon glyphicon glyphicon-indent-left" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;"> 每日价格</div>
+
+                </div>
+            </a>
+
+
+
+            <a href="/gonghao/原文">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;"> 原文</div>
+
+                </div>
+            </a>
+
+
+            <a href="/gonghao/原琴">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                    <span class="glyphicon glyphicon-music" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;"> 原画</div>
+
+                </div>
+            </a>
+
+
+            <a href="/gonghao/原琴">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                    <span class="glyphicon glyphicon-music" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;"> 原琴</div>
+
+                </div>
+            </a>
+
+
+
+
+
+ 
+
+
+
+            <a href=" ">
+                <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                    <span class="glyphicon glyphicon-music" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+                    <div class="text1" style="display:block; white-space: nowrap;">原人</div>
+
+                </div>
+            </a>
+
+
+
+
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+  
+<div class="container"><div class="title" style="padding: 5px; font-size: 16px;text-align:left"><span>知识区</span></div></div>
+
+<div class="container" style="text-align:center;  ">
+
+
+    <a href="/gonghao/学编程 ">
+        <div class="row">
+
+            <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+                <span class="glyphicon glyphicon glyphicon-book" aria-hidden="true" style="font-size: 30px;width: 80px;
+        padding: 10px;
+        background-size: cover;
+        border-radius: 25px;"></span>
+
+                <div class="text1" style="display:block; white-space: nowrap;">学编程</div>
+
+            </div>
+    </a>
+
+ 
+    <!--
+                <a href="/gonghao/代肝故事计划">
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 30px;width: 80px;
+            padding: 10px;
+            background-size: cover;
+            border-radius: 25px;"></span>
+                        <div class="text1" style="display:block; white-space: nowrap;"> 代肝故事计划</div>
+
+                    </div>
+                </a>
+
+
+
+                <a href="/gonghao/共号狼人杀">
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 30px;width: 80px;
+            padding: 10px;
+            background-size: cover;
+            border-radius: 25px;"></span>
+                        <div class="text1" style="display:block; white-space: nowrap;"> 共号狼人杀</div>
+
+                    </div>
+                </a>
+
+
+    -->
+    </div>
+
+
+
+
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+
+
+
+
+    <!--<div class="dibu">测试底部css</div>  -->
+    <!--<div class="aaa navbar-fixed-bottom">顶部测试</div>  -->
+
+    <footer class="footer navbar-fixed-bottom" style="text-align:center;">
+
+
+        <div class="container" style="text-align:center;  ">
+
+
+
+            <div class="row" style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+                <a href="/yuanshen/index">
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                        <span class="glyphicon glyphicon glyphicon-home" aria-hidden="true" style="font-size: 30px;width: 80px;
+                padding: 10px;
+                background-size: cover;
+                border-radius: 25px;"></span>
+                        <div class="text1" style="display:block; white-space: nowrap;"> 主页</div>
+
+                    </div>
+                </a>
+
+                <a href="/yuanshen/cailiao">
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                        <span class="glyphicon glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;width: 80px;
+                padding: 10px;
+                background-size: cover;
+                border-radius: 25px;"></span>
+                        <div class="text1" style="display:block; white-space: nowrap;  "> 下单区</div>
+
+                    </div>
+                </a>
+
+                <a href="/yuanshen/查询订单1">
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                        <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true" style="font-size: 30px;width: 80px;
+                padding: 10px;
+                background-size: cover;
+                border-radius: 25px;"></span>
+                        <div class="text1" style="display:block; white-space: nowrap;"> 查询</div>
+
+                    </div>
+                </a>
+
+
+
+
+
+                <a href="/yuanshen/人菜瘾还大">
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; ">
+
+                        <span class="glyphicon glyphicon-apple" aria-hidden="true" style="font-size: 30px;width: 80px;
+                padding: 10px;
+                background-size: cover;
+                border-radius: 25px;"></span>
+                        <div class="text1" style="display:block; white-space: nowrap;">人菜瘾还大</div>
+
+                    </div>
+                </a>
+
+
+            </div>
+
+
+
+        </div>
+
+
+        </div>
+
+    </footer>
+    </div>
+</body>
+    </html>

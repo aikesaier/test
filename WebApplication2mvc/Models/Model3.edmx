@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SalesERPDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="材料表">
+          <Key>
+            <PropertyRef Name="材料id" />
+          </Key>
+          <Property Name="材料id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="材料名称" Type="nvarchar(max)" />
+          <Property Name="材料单价" Type="nvarchar(max)" />
+          <Property Name="日期" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="订单表">
+          <Key>
+            <PropertyRef Name="订单id" />
+          </Key>
+          <Property Name="订单id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="材料名称" Type="nvarchar" MaxLength="50" />
+          <Property Name="数量" Type="int" />
+          <Property Name="账号" Type="nvarchar" MaxLength="50" />
+          <Property Name="qq" Type="nvarchar" MaxLength="50" />
+          <Property Name="备注" Type="nvarchar" MaxLength="50" />
+          <Property Name="日期" Type="datetime" />
+          <Property Name="订单状态" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="员工模型对应的表">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="5" />
+          <Property Name="Salary" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“SalesERPDB.dbo.订单表视图”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="订单表视图">
+          <Key>
+            <PropertyRef Name="订单id" />
+          </Key>
+          <Property Name="订单id" Type="int" Nullable="false" />
+          <Property Name="材料名称" Type="nvarchar" MaxLength="50" />
+          <Property Name="数量" Type="int" />
+          <Property Name="账号" Type="nvarchar" MaxLength="50" />
+          <Property Name="qq" Type="nvarchar" MaxLength="50" />
+          <Property Name="备注" Type="nvarchar" MaxLength="50" />
+          <Property Name="日期" Type="datetime" />
+          <Property Name="订单状态" Type="nvarchar" MaxLength="50" />
+          <Property Name="材料单价" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="SalesERPDBModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="材料表" EntityType="Self.材料表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="订单表" EntityType="Self.订单表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="员工模型对应的表" EntityType="Self.员工模型对应的表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="订单表视图" EntityType="Self.订单表视图" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [订单表视图].[订单id] AS [订单id], 
+    [订单表视图].[材料名称] AS [材料名称], 
+    [订单表视图].[数量] AS [数量], 
+    [订单表视图].[账号] AS [账号], 
+    [订单表视图].[qq] AS [qq], 
+    [订单表视图].[备注] AS [备注], 
+    [订单表视图].[日期] AS [日期], 
+    [订单表视图].[订单状态] AS [订单状态], 
+    [订单表视图].[材料单价] AS [材料单价]
+    FROM [dbo].[订单表视图] AS [订单表视图]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SalesERPDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="材料表">
+          <Key>
+            <PropertyRef Name="材料id" />
+          </Key>
+          <Property Name="材料id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="材料名称" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="材料单价" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="日期" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="订单表">
+          <Key>
+            <PropertyRef Name="订单id" />
+          </Key>
+          <Property Name="订单id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="材料名称" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="数量" Type="Int32" />
+          <Property Name="账号" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="备注" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="日期" Type="DateTime" Precision="3" />
+          <Property Name="订单状态" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="员工模型对应的表">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="订单表视图">
+          <Key>
+            <PropertyRef Name="订单id" />
+          </Key>
+          <Property Name="订单id" Type="Int32" Nullable="false" />
+          <Property Name="材料名称" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="数量" Type="Int32" />
+          <Property Name="账号" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="备注" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="日期" Type="DateTime" Precision="3" />
+          <Property Name="订单状态" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="材料单价" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="材料表" EntityType="Self.材料表" />
+          <EntitySet Name="订单表" EntityType="Self.订单表" />
+          <EntitySet Name="员工模型对应的表" EntityType="Self.员工模型对应的表" />
+          <EntitySet Name="订单表视图" EntityType="Self.订单表视图" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SalesERPDBModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="SalesERPDBModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="材料表">
+            <EntityTypeMapping TypeName="SalesERPDBModel.材料表">
+              <MappingFragment StoreEntitySet="材料表">
+                <ScalarProperty Name="材料id" ColumnName="材料id" />
+                <ScalarProperty Name="材料名称" ColumnName="材料名称" />
+                <ScalarProperty Name="材料单价" ColumnName="材料单价" />
+                <ScalarProperty Name="日期" ColumnName="日期" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="订单表">
+            <EntityTypeMapping TypeName="SalesERPDBModel.订单表">
+              <MappingFragment StoreEntitySet="订单表">
+                <ScalarProperty Name="订单id" ColumnName="订单id" />
+                <ScalarProperty Name="材料名称" ColumnName="材料名称" />
+                <ScalarProperty Name="数量" ColumnName="数量" />
+                <ScalarProperty Name="账号" ColumnName="账号" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="备注" ColumnName="备注" />
+                <ScalarProperty Name="日期" ColumnName="日期" />
+                <ScalarProperty Name="订单状态" ColumnName="订单状态" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="员工模型对应的表">
+            <EntityTypeMapping TypeName="SalesERPDBModel.员工模型对应的表">
+              <MappingFragment StoreEntitySet="员工模型对应的表">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="订单表视图">
+            <EntityTypeMapping TypeName="SalesERPDBModel.订单表视图">
+              <MappingFragment StoreEntitySet="订单表视图">
+                <ScalarProperty Name="订单id" ColumnName="订单id" />
+                <ScalarProperty Name="材料名称" ColumnName="材料名称" />
+                <ScalarProperty Name="数量" ColumnName="数量" />
+                <ScalarProperty Name="账号" ColumnName="账号" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="备注" ColumnName="备注" />
+                <ScalarProperty Name="日期" ColumnName="日期" />
+                <ScalarProperty Name="订单状态" ColumnName="订单状态" />
+                <ScalarProperty Name="材料单价" ColumnName="材料单价" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

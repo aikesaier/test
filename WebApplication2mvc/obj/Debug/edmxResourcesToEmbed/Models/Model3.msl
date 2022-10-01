@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SalesERPDBModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="SalesERPDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="材料表">
+      <EntityTypeMapping TypeName="SalesERPDBModel.材料表">
+        <MappingFragment StoreEntitySet="材料表">
+          <ScalarProperty Name="材料id" ColumnName="材料id" />
+          <ScalarProperty Name="材料名称" ColumnName="材料名称" />
+          <ScalarProperty Name="材料单价" ColumnName="材料单价" />
+          <ScalarProperty Name="日期" ColumnName="日期" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="订单表">
+      <EntityTypeMapping TypeName="SalesERPDBModel.订单表">
+        <MappingFragment StoreEntitySet="订单表">
+          <ScalarProperty Name="订单id" ColumnName="订单id" />
+          <ScalarProperty Name="材料名称" ColumnName="材料名称" />
+          <ScalarProperty Name="数量" ColumnName="数量" />
+          <ScalarProperty Name="账号" ColumnName="账号" />
+          <ScalarProperty Name="qq" ColumnName="qq" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+          <ScalarProperty Name="日期" ColumnName="日期" />
+          <ScalarProperty Name="订单状态" ColumnName="订单状态" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="员工模型对应的表">
+      <EntityTypeMapping TypeName="SalesERPDBModel.员工模型对应的表">
+        <MappingFragment StoreEntitySet="员工模型对应的表">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="订单表视图">
+      <EntityTypeMapping TypeName="SalesERPDBModel.订单表视图">
+        <MappingFragment StoreEntitySet="订单表视图">
+          <ScalarProperty Name="订单id" ColumnName="订单id" />
+          <ScalarProperty Name="材料名称" ColumnName="材料名称" />
+          <ScalarProperty Name="数量" ColumnName="数量" />
+          <ScalarProperty Name="账号" ColumnName="账号" />
+          <ScalarProperty Name="qq" ColumnName="qq" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+          <ScalarProperty Name="日期" ColumnName="日期" />
+          <ScalarProperty Name="订单状态" ColumnName="订单状态" />
+          <ScalarProperty Name="材料单价" ColumnName="材料单价" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

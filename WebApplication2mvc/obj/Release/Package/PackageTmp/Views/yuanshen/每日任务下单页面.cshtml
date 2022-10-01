@@ -1,0 +1,404 @@
+﻿@using WebApplication2mvc.Models
+@model  材料表视图
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap
+    <link rel="stylesheet" href="./css/bootstrap.min.css"  >
+
+
+        <script src="https://cdn.jsdelivr.cn/npm/jquery@1.12.4/dist/jquery.min.js" ></script>
+
+        <script src="./js/bootstrap.min.js"  ></script>   -->
+    <!-- Bootstrap
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    -->
+
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+
+
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #000000;
+                text-decoration: none;
+            }
+
+
+
+        img {
+            width: 80px;
+            height: 80px;
+            padding: 10px;
+            background-size: cover;
+            border-radius: 25px;
+        }
+
+
+
+
+
+
+
+
+        textarea {
+            margin-top: 10px;
+            width: 100%;
+            height: 100%;
+            resize: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+    $(document).bind('input propertychange',"#housing-chengjiao-price,#down-payments",function(){
+    var cjprice = $("#housing-chengjiao-price").val();
+   // var shoufu=$('#down-payments').val();
+    var dkprice=(cjprice * @ViewBag.材料单价).toFixed(2);//计算贷款
+        $('#loan').html("价格：" + dkprice + "元");
+        $('#aaaaa').html("市场价格：" + dkprice + "元");
+         var ekprice=(cjprice * (@Model.大佬时间分钟 / @Model.材料数量)  * (19/60) ).toFixed(2);//计算贷款
+        $('#建议还价金额').html("价格：" + ekprice + "元");
+
+        var 此时单价是 = ( @Model.大佬时间分钟 / @Model.材料数量  * (19/60) ).toFixed(2);//计算贷款
+        $('#此时单价是').html( 此时单价是 + "元");
+
+
+
+        var 预计需要时间 = (cjprice * @Model.大佬时间分钟 / @Model.材料数量     ).toFixed(2);//计算贷款
+        $('#预计需要时间').html( 预计需要时间 + "分");
+
+    });
+
+    </script>
+
+
+
+
+</head>
+<body class="container" style=" background-color: #f7f8fa;  ">
+
+
+
+
+
+
+
+
+    @{ string goodsImg = "../../Content/" + Request.QueryString["mingcheng"] + ".jpg";
+        string 材料名称 = Request.QueryString["mingcheng"];
+
+        string 订单编号 = ViewBag.订单编号;
+
+        string 日期 = DateTime.Now.ToLocalTime().ToString();
+
+    }
+
+
+
+    <div class="quyu" style="display: flex;width: 100%;justify-content: space-evenly;background-color: #fff;">
+        <div class="col-xs-3 col-sm-3 col-md-3" style="background-color: white; text-align:center">
+
+            <img src=@goodsImg alt="的法规规定">
+            <div class="text1" style="display:block; white-space: nowrap; text-align:center">  @Request.QueryString["mingcheng"]</div>
+            <div class="text1" style="display: block; white-space: nowrap; text-align: center"> @ViewBag.材料单价 摩拉</div>
+
+        </div>
+    </div>
+
+    @{
+
+        string ddh = "/yuanshen/保存订单信息?dingdanhao=" + @订单编号;
+
+        string ddh1 = "/yuanshen/保存订单信息1?dingdanhao=" + @订单编号;
+    }
+
+
+<form action=@ddh method="post" name="form1">
+
+    <input type="text" name="订单编号" style=" display: none" class="form-control" placeholder="订单编号" value=@订单编号>
+    <input type="text" name="材料名称" style="display:none" class="form-control" placeholder="材料名称" value=@材料名称>
+    <input type="text" name="订单状态" style="display:none" class="form-control" placeholder="订单状态" value="待付款">
+
+    <input type="text" name="日期" style="display: none " class="form-control" placeholder="日期" value=@日期>
+    <div style="margin-top:20px; margin-bottom:10px">下单天数</div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="text" name="数量" type="number" id="housing-chengjiao-price" class="form-control" placeholder="请填写下单天数" style="padding:10px">
+        </div>
+
+        <div> @Html.ValidationMessage("数量")  @ViewBag.hh   </div>
+
+    </div>
+
+
+    <div style="margin-top:20px; margin-bottom:10px">请填写游戏账号</div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="text" name="账号" class="form-control" placeholder="游戏账号">
+        </div>
+        <div class="col-xs-12">
+            <input type="text" class="form-control " placeholder="密码请留空，需要联系打手或验证码登陆" style="margin-top:10px; " disabled>
+        </div>
+
+    </div>
+
+
+    <div style="margin-top:20px; margin-bottom:10px">填写联系QQ号</div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="text" name="qq" class="form-control" placeholder="QQ号">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <textarea style="height:100px" name="备注" placeholder="订单备注(选填,50字以内)"></textarea>
+        </div>
+
+    </div>
+
+    <div class="row" style="display:none">
+        <div class="radio col-xs-8 col-sm-8 col-md-8">
+            <label style="width:100%">
+                <input type="radio" name="打手qq" id="optionsRadios1" value="709***384" checked>
+                <div class="alert alert-info " role="alert" data-toggle="popover" data-placement="top"
+                     title="打手信息" data-container="body" data-content="uid: 欢迎来我的世界，一起来徒步 ">b站：须弥徒步团  qq: 709****384</div>
+                </label>
+            </div>
+            <script>
+                $('div').popover();
+            </script>
+
+
+            <div class="col-xs-2 col-sm-2 col-md-2 " style="margin-top:18px">
+                <a href="https://space.bilibili.com/1357467941"><p type="button" class="btn btn-warning">  直播间</p> </a>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--
+           <div class="row">
+               <div class="radio col-xs-10 col-sm-10 col-md-10  ">
+                   <label style="width:100%">
+                       <input type="radio" name="打手qq" id="optionsRadios3" value=>
+                       <div class="alert alert-info" data-toggle="popover" data-placement="top"
+                            title="打手信息" data-content="uid:" role="alert"> 打手qq:    </div>
+
+                       </label>
+                   </div>
+                   <script>
+                       // $('div').popover();
+                       $(function () { $('div').popover({ html: true }); });
+                   </script>
+
+                   <div class="col-xs-2 col-sm-2 col-md-2 " style="margin-top:18px">
+                       <a href=""><p type="button" class="btn btn-warning">  直播间</p> </a>
+                   </div>
+               </div>  -->
+
+
+
+        <h3 id="loan" style="color:red; text-align:right">价格： 元</h3>
+
+
+
+
+        <!-- LOGIN MODULE -->
+        <div id="loginModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h4 class="modal-title">讨价还价</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label for="log_uname">
+                            <span>请填写还价金额（元）:</span>
+                            <input id="log_uname" class="form-control" type="text" name="log_uname" type="text" placeholder="请填写金额">
+                        </label>
+                        <br>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" onclick="form1.action= '@ddh1 ' ;form1.submit();">确定</button>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">
+                            ×
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            讨价还价
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        请输入金额（元）
+
+                        <input type="text" name="还价金额" class="form-control" placeholder="请输入还价金额">
+
+                    </div>
+                    <div id="aaaaa" style="color:red; text-align:right">市场价格： 元</div>
+
+
+
+
+                    <table class="table">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>建议还价金额</th>
+                                <th>此时单价是</th>
+                                <th>预计需要时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="success">
+                                <td id="建议还价金额">aaa</td>
+                                <td id="此时单价是">bbb</td>
+                                <td id="预计需要时间"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <table class="table">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>对标时薪</th>
+                                <th>萌新时薪</th>
+                                <th>大佬时薪</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="active">
+                                <td>@Model.对标时薪</td>
+                                <td>@Model.萌新时薪</td>
+                                <td>@Model.大佬时薪</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary" onclick="form1.action= '@ddh ' ;form1.submit();">
+                            确定
+                        </button>
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            取消
+                        </button>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            建议还价金额按照19元计算，对应四线城市月26天8小时4000元工作。一二线城市还价金额翻倍。建议价格计算公式 = 下单数量 *  大佬时间分钟 / 样本数量  * (19/60)
+                        </div>
+
+                        <div class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            对价格及样本时间有疑问，可前往文档反馈。 </a>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+
+
+        <div class="row">
+
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12" style="background-color:lavenderblush;">
+                <button type="submit" value="tijiao" class="btn btn-default btn-lg" style="width: 100%; background-color: #337ab7;   font-weight: 700; font-size: 18px ">
+                    提 &nbsp 交&nbsp 订&nbsp 单
+                </button>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

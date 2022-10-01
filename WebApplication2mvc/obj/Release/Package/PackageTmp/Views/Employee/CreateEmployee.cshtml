@@ -1,0 +1,119 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateEmployee</title>
+    <script>
+    function ResetForm() {
+        document.getElementById('TxtFName').value = "";
+        document.getElementById('TxtLName').value = "";
+        document.getElementById('TxtSalary').value = "";
+        }
+
+
+
+
+        function ResetForm1(){
+
+              
+
+            var xmlhttp;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            var 同意还价action = "/Employee/SaveEmployee" ;
+            //alert(同意还价action);
+            var tt = 3;
+            xmlhttp.open("GET", 同意还价action, true);
+            xmlhttp.send();
+
+            // document.getElementById("在线状态").innerHTML = "bbbbbbbbbb";
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+                     alert(xmlhttp.responseText);
+                    alert(3333);
+                    document.getElementById("aaa").innerHTML = "已完成"    ;
+                    if (xmlhttp.responseText == "1") {
+                        alert(44444);
+                        document.getElementById("aaa").innerHTML = "已完成";
+
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!--
+    <div>
+        <form action="/Employee/SaveEmployee" method="post">
+            First Name: <input type="text" id="TxtFName" name="FirstName" value="" /><br />
+            Last Name: <input type="text" id="TxtLName" name="LastName" value="" /><br />
+            Salary: <input type="text" id="TxtSalary" name="Salary" value="" /><br />
+            <input type="submit" name="BtnSubmit" value="Save Employee" />
+            <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
+            <input type="submit" name="BtnSubmit" value="Cancel" />
+        </form>
+    </div>
+        -->
+    <form action="/Employee/SaveEmployee" method="post">
+        <table>
+            <tr>
+                <td>
+                    First Name:
+                </td>
+                <td>
+                    <input type="text" id="TxtFName" name="FirstName" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    @Html.ValidationMessage("FirstName")   FirstName啊啊啊
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name:
+                </td>
+                <td>
+                    <input type="text" id="TxtLName" name="LastName" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    @Html.ValidationMessage("LastName")   LastName啊啊啊
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Salary:
+                </td>
+                <td>
+                    <input type="text" id="TxtSalary" name="Salary" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    @Html.ValidationMessage("Salary")  是顶顶顶顶顶
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="BtnSubmit" value="Save Employee" />
+                    <input type="submit" name="BtnSubmit" value="Cancel" />
+                    <input type="button" name="BtnSubmit" value="Reset" onclick="ResetForm1();" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="aaa">aaa</div>
+</body>
+</html>

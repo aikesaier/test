@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F5D9C03-599B-4CBB-A81C-48C6013FD52C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication2mvc</RootNamespace>
+    <AssemblyName>WebApplication2mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44312</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
+    <IncludeIisSettings>false</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="bbb.aspx.cs">
+      <DependentUpon>bbb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bbb.aspx.designer.cs">
+      <DependentUpon>bbb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ceshiaspx\ccc.aspx.cs">
+      <DependentUpon>ccc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ceshiaspx\ccc.aspx.designer.cs">
+      <DependentUpon>ccc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ceshiController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\gonghaoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\yuanshenController.cs" />
+    <Compile Include="Controllers\不加控制器后缀Controller.cs" />
+    <Compile Include="Controllers\测试Controller.cs" />
+    <Compile Include="Data Access Layer\SalesERPDAL.cs" />
+    <Compile Include="Data Access Layer\cailiaodal.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aa.cs" />
+    <Compile Include="Models\bb.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\cailiao.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Model2.cs" />
+    <Compile Include="Models\Model3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model6.cs" />
+    <Compile Include="Models\共享账号.cs" />
+    <Compile Include="Models\共享账号视图.cs" />
+    <Compile Include="Models\员工模型对应的表.cs" />
+    <Compile Include="Models\打手接单视图表1.cs" />
+    <Compile Include="Models\打手接需求表.cs" />
+    <Compile Include="Models\打手表.cs" />
+    <Compile Include="Models\打手表视图.cs" />
+    <Compile Include="Models\推荐人.cs" />
+    <Compile Include="Models\推荐人视图.cs" />
+    <Compile Include="Models\材料表.cs" />
+    <Compile Include="Models\材料表视图.cs" />
+    <Compile Include="Models\测试视图.cs" />
+    <Compile Include="Models\订单表.cs" />
+    <Compile Include="Models\订单表视图.cs">
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\订单表视图1.cs" />
+    <Compile Include="Models\需求表.cs" />
+    <Compile Include="Models\需求表视图.cs" />
+    <Compile Include="Models\黑名单.cs" />
+    <Compile Include="Models\黑名单视图.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmployeeBusinessLayer.cs" />
+    <Compile Include="ViewModels\EmployeeListViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\订单表视图列表.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bbb.aspx" />
+    <Content Include="ceshiaspx\ccc.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\paimeng2.jpg" />
+    <Content Include="Content\paimeng3.jpg" />
+    <Content Include="Content\paimeng4.jpg" />
+    <Content Include="Content\买家登陆.jpg" />
+    <Content Include="Content\传说任务.jpg" />
+    <Content Include="Content\邀约任务.jpg" />
+    <Content Include="Content\每日体力.jpg" />
+    <Content Include="Content\每日任务.jpg" />
+    <Content Include="Content\任务1.jpg" />
+    <Content Include="Content\冰雾花花朵.jpg" />
+    <Content Include="Content\劫波莲.jpg" />
+    <Content Include="Content\史莱姆凝液1.jpg" />
+    <Content Include="Content\史莱姆凝液2.jpg" />
+    <Content Include="Content\史莱姆凝液3.jpg" />
+    <Content Include="Content\嘟嘟莲.jpg" />
+    <Content Include="Content\地脉的旧枝1.jpg" />
+    <Content Include="Content\地脉的旧枝2.jpg" />
+    <Content Include="Content\地脉的旧枝3.jpg" />
+    <Content Include="Content\堇瓜.jpg" />
+    <Content Include="Content\塞西莉亚花.jpg" />
+    <Content Include="Content\墩墩桃.jpg" />
+    <Content Include="Content\壶.jpg" />
+    <Content Include="Content\夜泊石.jpg" />
+    <Content Include="Content\天云草实.jpg" />
+    <Content Include="Content\失活菌核1.jpg" />
+    <Content Include="Content\失活菌核2.jpg" />
+    <Content Include="Content\失活菌核3.jpg" />
+    <Content Include="Content\寻宝鸦印1.jpg" />
+    <Content Include="Content\寻宝鸦印2.jpg" />
+    <Content Include="Content\寻宝鸦印3.jpg" />
+    <Content Include="Content\导能绘卷1.jpg" />
+    <Content Include="Content\导能绘卷2.jpg" />
+    <Content Include="Content\导能绘卷3.jpg" />
+    <Content Include="Content\小灯草.jpg" />
+    <Content Include="Content\帕蒂沙兰.jpg" />
+    <Content Include="Content\帕蒂莎兰.jpg" />
+    <Content Include="Content\幽灯蕈.jpg" />
+    <Content Include="Content\微信付款码.jpg" />
+    <Content Include="Content\慕风蘑菇.jpg" />
+    <Content Include="Content\探索度.jpg" />
+    <Content Include="Content\新兵的徽记1.jpg" />
+    <Content Include="Content\新兵的徽记2.jpg" />
+    <Content Include="Content\新兵的徽记3.jpg" />
+    <Content Include="Content\时间.jpg" />
+    <Content Include="Content\星蕈.jpg" />
+    <Content Include="Content\星螺.jpg" />
+    <Content Include="Content\晦暗刻像1.jpg" />
+    <Content Include="Content\晦暗刻像2.jpg" />
+    <Content Include="Content\晦暗刻像3.jpg" />
+    <Content Include="Content\晶化骨髓.jpg" />
+    <Content Include="Content\晶核.jpg" />
+    <Content Include="Content\暗淡棱镜1.jpg" />
+    <Content Include="Content\暗淡棱镜2.jpg" />
+    <Content Include="Content\暗淡棱镜3.jpg" />
+    <Content Include="Content\月莲.jpg" />
+    <Content Include="Content\松果.jpg" />
+    <Content Include="Content\松茸.jpg" />
+    <Content Include="Content\树王圣体菇.jpg" />
+    <Content Include="Content\树莓.jpg" />
+    <Content Include="Content\每月深渊.jpg" />
+    <Content Include="Content\毗波耶.jpg" />
+    <Content Include="Content\沉重号角1.jpg" />
+    <Content Include="Content\沉重号角2.jpg" />
+    <Content Include="Content\沉重号角3.jpg" />
+    <Content Include="Content\浮游干核1.jpg" />
+    <Content Include="Content\浮游干核2.jpg" />
+    <Content Include="Content\浮游干核3.jpg" />
+    <Content Include="Content\海灵芝.jpg" />
+    <Content Include="Content\海草.jpg" />
+    <Content Include="Content\深渊法师.jpg" />
+    <Content Include="Content\混沌容器1.jpg" />
+    <Content Include="Content\混沌容器2.jpg" />
+    <Content Include="Content\混沌容器3.jpg" />
+    <Content Include="Content\混沌机关1.jpg" />
+    <Content Include="Content\混沌机关2.jpg" />
+    <Content Include="Content\混沌机关3.jpg" />
+    <Content Include="Content\混沌装置1.jpg" />
+    <Content Include="Content\混沌装置2.jpg" />
+    <Content Include="Content\混沌装置3.jpg" />
+    <Content Include="Content\清心.jpg" />
+    <Content Include="Content\烈焰花花蕊.jpg" />
+    <Content Include="Content\牢固的箭簇1.jpg" />
+    <Content Include="Content\牢固的箭簇2.jpg" />
+    <Content Include="Content\猎兵祭刀1.jpg" />
+    <Content Include="Content\猎兵祭刀2.jpg" />
+    <Content Include="Content\猎兵祭刀3.jpg" />
+    <Content Include="Content\珊瑚真珠.jpg" />
+    <Content Include="Content\琉璃百合.jpg" />
+    <Content Include="Content\琉璃袋.jpg" />
+    <Content Include="Content\甜甜花.jpg" />
+    <Content Include="Content\电气水晶.jpg" />
+    <Content Include="Content\石珀.jpg" />
+    <Content Include="Content\破损的面具1.jpg" />
+    <Content Include="Content\破损的面具2.jpg" />
+    <Content Include="Content\破损的面具3.jpg" />
+    <Content Include="Content\破旧的刀镡1.jpg" />
+    <Content Include="Content\破旧的刀镡2.jpg" />
+    <Content Include="Content\破旧的刀镡3.jpg" />
+    <Content Include="Content\神瞳.jpg" />
+    <Content Include="Content\竹笋.jpg" />
+    <Content Include="Content\绝云辣椒.jpg" />
+    <Content Include="Content\绯樱绣球.jpg" />
+    <Content Include="Content\脆弱的骨片1.jpg" />
+    <Content Include="Content\脆弱的骨片2.jpg" />
+    <Content Include="Content\脆弱的骨片3.jpg" />
+    <Content Include="Content\莲蓬.jpg" />
+    <Content Include="Content\落落莓.jpg" />
+    <Content Include="Content\蕈兽孢子1.jpg" />
+    <Content Include="Content\蕈兽孢子2.jpg" />
+    <Content Include="Content\蕈兽孢子3.jpg" />
+    <Content Include="Content\薄荷.jpg" />
+    <Content Include="Content\血斛.jpg" />
+    <Content Include="Content\褪色红绸1.jpg" />
+    <Content Include="Content\褪色红绸2.jpg" />
+    <Content Include="Content\褪色红绸3.jpg" />
+    <Content Include="Content\角色.jpg" />
+    <Content Include="Content\订单查询.jpg" />
+    <Content Include="Content\金鱼草.jpg" />
+    <Content Include="Content\钩钩果.jpg" />
+    <Content Include="Content\隐兽指爪1.jpg" />
+    <Content Include="Content\隐兽指爪2.jpg" />
+    <Content Include="Content\隐兽指爪3.jpg" />
+    <Content Include="Content\雾虚花粉1.jpg" />
+    <Content Include="Content\雾虚花粉2.jpg" />
+    <Content Include="Content\雾虚花粉3.jpg" />
+    <Content Include="Content\霓裳花.jpg" />
+    <Content Include="Content\须弥蔷薇.jpg" />
+    <Content Include="Content\风车菊.jpg" />
+    <Content Include="Content\香辛果.jpg" />
+    <Content Include="Content\马尾.jpg" />
+    <Content Include="Content\骗骗花蜜1.jpg" />
+    <Content Include="Content\骗骗花蜜2.jpg" />
+    <Content Include="Content\骗骗花蜜3.jpg" />
+    <Content Include="Content\鬼兜虫.jpg" />
+    <Content Include="Content\鸟蛋.jpg" />
+    <Content Include="Content\鸣草.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model3.edmx</DependentUpon>
+      <LastGenOutput>Model3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model3.edmx</DependentUpon>
+      <LastGenOutput>Model3.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model3.edmx.diagram">
+      <DependentUpon>Model3.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile1.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Content\深渊.jpg" />
+    <Content Include="Content\牢固的箭簇3.jpg" />
+    <Content Include="Content\看号.jpg" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\测试\测试对应的视图.cshtml" />
+    <Content Include="Views\不加控制器后缀\测试视图1.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\yuanshen\maicailiao.cshtml" />
+    <Content Include="Views\yuanshen\cailiaoxiangqing.cshtml" />
+    <Content Include="Views\Employee\CreateEmployee.cshtml" />
+    <Content Include="Views\yuanshen\主页.cshtml" />
+    <Content Include="Views\yuanshen\选择支付方式.cshtml" />
+    <Content Include="Views\yuanshen\跳转支付宝支付.cshtml" />
+    <Content Include="Views\yuanshen\跳转微信支付.cshtml" />
+    <Content Include="Views\yuanshen\已付款订单信息.cshtml" />
+    <Content Include="Views\yuanshen\查询订单1.cshtml" />
+    <Content Include="Views\yuanshen\查询订单2.cshtml" />
+    <Content Include="Views\yuanshen\打手查询1.cshtml" />
+    <Content Include="Views\yuanshen\打手查询2.cshtml" />
+    <Content Include="Views\yuanshen\材料输入错误.cshtml" />
+    <Content Include="Views\yuanshen\西风骑士团.cshtml" />
+    <Content Include="Views\yuanshen\人菜瘾还大.cshtml" />
+    <Content Include="Views\yuanshen\每日价格.cshtml" />
+    <Content Include="Views\yuanshen\每日任务.cshtml" />
+    <Content Include="Views\yuanshen\每日任务下单页面.cshtml" />
+    <Content Include="Views\yuanshen\每日任务下单页面数量.cshtml" />
+    <Content Include="Views\yuanshen\主页2.cshtml" />
+    <Content Include="Views\yuanshen\旅行者大厅.cshtml" />
+    <Content Include="Views\yuanshen\发布需求.cshtml" />
+    <Content Include="Views\yuanshen\需求详情.cshtml" />
+    <Content Include="Views\yuanshen\报价.cshtml" />
+    <Content Include="Views\yuanshen\黑名单.cshtml" />
+    <Content Include="Views\yuanshen\需求详情选择打手.cshtml" />
+    <Content Include="Views\yuanshen\打手大厅.cshtml" />
+    <Content Include="Views\yuanshen\打手注册.cshtml" />
+    <Content Include="Views\yuanshen\需求详情查看买家.cshtml" />
+    <Content Include="Views\gonghao\推荐人.cshtml" />
+    <Content Include="Views\gonghao\代肝故事计划.cshtml" />
+    <Content Include="Views\gonghao\共号狼人杀.cshtml" />
+    <Content Include="Views\gonghao\萌新59级.cshtml" />
+    <Content Include="Views\gonghao\原文.cshtml" />
+    <Content Include="Views\gonghao\原琴.cshtml" />
+    <Content Include="Views\gonghao\学编程.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\" />
+    <Folder Include="Views\ceshi\" />
+    <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63833</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44312/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
